@@ -10,13 +10,9 @@ jobs:
     name: Upload Assets to Release
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/download-artifact@v4
-      with:
-        name: built-artifacts
-        path: ./
     - uses: AButler/upload-release-assets@v3.0
       with:
-        files: "*.js"
+        files: "./*.js"
         repo-token: ${{ secrets.API_TOKEN_GITHUB }}
         release-tag: ${{ needs.package.outputs.version }}
   

@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: AButler/upload-release-assets@v3.0
       with:
-        files: "proxy-management-full.js;proxy-management-lite.js"
+        files: "*.js"
         repo-token: ${{ secrets.API_TOKEN_GITHUB }}
         release-tag: ${{ needs.package.outputs.version }}
   

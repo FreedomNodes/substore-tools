@@ -14,8 +14,8 @@ jobs:
       with:
         name: my-artifact
         path: |
-          proxy-management-full.js
-          proxy-management-lite.js
+          ./proxy-management-full.js
+          ./proxy-management-lite.js
         if-no-files-found: error
     - uses: AButler/upload-release-assets@v3.0
       with:

@@ -10,9 +10,15 @@ jobs:
     name: Upload Assets to Release
     runs-on: ubuntu-22.04
     steps:
+    - uses: actions/upload-artifact@v4
+      with:
+        name: my-artifact
+        path: |
+          *.js
+        if-no-files-found: error
     - uses: AButler/upload-release-assets@v3.0
       with:
-        files: "proxy-management-full.js"
+        files: "*.js"
         repo-token: ${{ secrets.API_TOKEN_GITHUB }}
         release-tag: ${{ needs.package.outputs.version }}
   

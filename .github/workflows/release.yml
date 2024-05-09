@@ -11,15 +11,21 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
+    - name: Upload proxy-management-lite.js to GitHub Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: 'proxy-management-lite-${{github.ref_name}}.js'
+        path: |
+          ./proxy-management-lite.js
     - name: Upload proxy-management-full.js to GitHub Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: 'proxy-management-full.js'
+        name: 'proxy-management-full-${{github.ref_name}}.js'
         path: |
           ./proxy-management-full.js
     - uses: AButler/upload-release-assets@v3.0
       with:
-        files: "*.js"
+        files: "proxy-management-lite-${{github.ref_name}}.js;proxy-management-full-${{github.ref_name}}.js"
         repo-token: ${{ secrets.API_TOKEN_GITHUB }}
         release-tag: ${{ needs.package.outputs.version }}
   

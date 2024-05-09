@@ -10,13 +10,12 @@ jobs:
     name: Upload Assets to Release
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/upload-artifact@v4
+    - name: Upload proxy-management-full.js to GitHub Artifacts
+      uses: actions/upload-artifact@v4
       with:
-        name: my-artifact
+        name: 'proxy-management-full.js'
         path: |
           ./proxy-management-full.js
-          ./proxy-management-lite.js
-        if-no-files-found: error
     - uses: AButler/upload-release-assets@v3.0
       with:
         files: "*.js"

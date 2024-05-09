@@ -12,12 +12,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Update files for version ${{github.ref_name}}
+      working-directory: ./scripts
       run: |
         mv proxy-management-lite.js proxy-management-lite-${{github.ref_name}}.js
         mv proxy-management-full.js proxy-management-full-${{github.ref_name}}.js
     - uses: AButler/upload-release-assets@v3.0
       with:
-        files: "proxy-management-lite-${{github.ref_name}}.js;proxy-management-full-${{github.ref_name}}.js"
+        files: "scripts/proxy-management-lite-${{github.ref_name}}.js;scripts/proxy-management-full-${{github.ref_name}}.js"
         repo-token: ${{ secrets.API_TOKEN_GITHUB }}
         release-tag: ${{ needs.package.outputs.version }}
   

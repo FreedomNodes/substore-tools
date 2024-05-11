@@ -49,7 +49,7 @@ Sau đó tạo 1 Script Operator **duy nhất** ở phần Node Actions để li
 ![](/assets/images/substore-sub-2.jpeg)
 
 > [!TIP]
-> Id của sub không bắt buộc phải trùng với id trong file config. Ta có thể chỉ định sử dụng bộ lọc nào bằng cách thêm biến `type` vào sau link file script. VD: `/api/file/file-management-lite#type=groups`
+> Id của sub không bắt buộc phải trùng với id trong file config. Ta có thể chỉ định sử dụng bộ lọc nào bằng cách thêm biến `type` vào sau link file script. VD: `/api/file/proxy-management-lite#type=groups`
 
 ### Cuối cùng là đồng bộ với app đang sử dụng 🎉
 

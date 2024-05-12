@@ -45,7 +45,7 @@ Ví dụ cần sử dụng bộ lọc `groups` như ở trên ta tạo sub dạn
 ![](/assets/images/substore-sub-1.jpg)
 
 Sau đó tạo 1 Script Operator **duy nhất** ở phần Node Actions để link với file script ta đã tạo ở trên với format là: `/api/file/{file id}`
-Ở ví dụ này link sẽ là `/api/file/file-management-lite`
+Ở ví dụ này link sẽ là `/api/file/proxy-management-lite`
 ![](/assets/images/substore-sub-2.jpeg)
 
 > [!TIP]

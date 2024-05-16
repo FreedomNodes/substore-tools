@@ -1,0 +1,12 @@
+#!name=Block Advertising
+#!desc=Block Advertising for Surge iOS
+#!system=ios
+#!engine=webview
+#!category=Block Ads
+#!author=Kien Tran
+
+[Script]
+AntiAdb-Phimmoi = type=http-response,pattern=https:\/\/phimmoiiii\.net,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/BlockAds/scripts/block-ads.js, time-out=10
+
+[MITM]
+hostname = %APPEND% phimmoiiii.net

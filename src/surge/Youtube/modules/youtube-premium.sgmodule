@@ -1,0 +1,25 @@
+#!name=Youtube Ads
+#!desc=Remove Youtube Ads (IOS >= 15)
+#!requirement=CORE_VERSION>=20 && (SYSTEM = 'iOS' || SYSTEM = 'macOS')
+#!category=Youtube
+#!author=Kien Tran
+
+# > Feature
+# Delete ads and shorts that appear in waterfalls, videos, and searches
+# Delete video ads in Shorts
+# Delete bottom upload button
+# Add picture-in-picture (PIP), background playback (Beta)
+# Add automatic translation
+
+[Rule]
+AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT-NO-DROP
+
+[Script]
+youtube.request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)\?,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_remove_ads_request.js,script-update-interval=86400
+youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_remove_ads_response.js,script-update-interval=86400
+
+[Map Local]
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/resources/blank/blank.txt"
+
+[MITM]
+hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com

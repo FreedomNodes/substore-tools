@@ -1,0 +1,8 @@
+#!name = Block HTTP3/QUIC
+#!desc = Block HTTP3/QUIC
+#!system=ios
+#!author=Kien Tran
+
+[Rule]
+# > Block HTTP3/QUIC
+AND,((PROTOCOL,UDP), (DEST-PORT,443)),REJECT-NO-DROP

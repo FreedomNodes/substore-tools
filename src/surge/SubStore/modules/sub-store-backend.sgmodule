@@ -1,0 +1,9 @@
+#!name=SubStore Backend
+#!desc=SubStore backend hosted by third-party
+#!category= Sub-Store
+#!requirement=CORE_VERSION>=20 && (SYSTEM = 'iOS' || SYSTEM = 'macOS')
+#!arguments=backend_url:url
+#!author=Kien Tran
+
+[URL Rewrite]
+^https?:\/\/sub\.store {{{backend_url}}} 302

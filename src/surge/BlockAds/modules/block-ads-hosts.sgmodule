@@ -1,0 +1,42 @@
+#!name=Block Ads Hosts
+#!desc=Block Advertising for Surge iOS
+#!system=ios
+#!category=Block Ads
+#!author=Kien Tran
+
+[Rule]
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/adaway.txt,REJECT-TINYGIF,update-interval=21600
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/annoyances-filter.txt,REJECT-TINYGIF,update-interval=21600
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/base-filter.txt,REJECT-TINYGIF,update-interval=21600
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/chinese-filter.txt,REJECT-TINYGIF,update-interval=21600
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/neohosts-full.txt,REJECT-TINYGIF,update-interval=21600
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/neohosts.txt,REJECT-TINYGIF,update-interval=21600
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/social-media-filter.txt,REJECT-TINYGIF,update-interval=21600
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/tracking-protection-filter.txt,REJECT-TINYGIF,update-interval=21600
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/geekdada/surge-list/domain-set/dns-filter.txt,REJECT-TINYGIF,update-interval=21600
+RULE-SET,https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/hostsVN-surge-exceptions-rule.conf,DIRECT,update-interval=21600
+RULE-SET,https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/hostsVN-surge-rule.conf,REJECT-TINYGIF,update-interval=21600
+#RULE-SET,https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/hostsVN-surge-OTA.conf,REJECT-TINYGIF,update-interval=21600
+#RULE-SET,https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/hostsVN-surge-FB.conf,REJECT-TINYGIF,update-interval=21600
+RULE-SET,https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/hostsVN-surge-rewrite.conf,REJECT-TINYGIF,update-interval=21600
+#RULE-SET,https://raw.githubusercontent.com/bigdargon/hostsVN/master/extensions/adult/surge-rule.conf,REJECT-TINYGIF,update-interval=21600
+RULE-SET,https://raw.githubusercontent.com/bigdargon/hostsVN/master/extensions/gambling/surge-rule.conf,REJECT-TINYGIF,update-interval=21600
+RULE-SET,https://raw.githubusercontent.com/bigdargon/hostsVN/master/extensions/threat/surge-rule.conf,REJECT-TINYGIF,update-interval=21600
+DOMAIN,tracking.rus.miui.com,REJECT
+DOMAIN,affiliationjs.s3.amazonaws.com,REJECT
+DOMAIN,tracking.rus.miui.com,REJECT
+DOMAIN,grs.hicloud.com,REJECT
+DOMAIN,click.oneplus.cn,REJECT
+DOMAIN,iot-logser.realme.com,REJECT
+DOMAIN,iot-eu-logser.realme.com,REJECT
+DOMAIN,udcm.yahoo.com,REJECT
+DOMAIN,udc.yahoo.com,REJECT
+DOMAIN,widgets.pinterest.com,REJECT
+DOMAIN,log.byteoversea.com,REJECT
+DOMAIN,events.reddit.com,REJECT
+DOMAIN,app.getsentry.com,REJECT
+DOMAIN,browser.sentry-cdn.com,REJECT
+DOMAIN,app.bugsnag.com,REJECT
+DOMAIN,api.bugsnag.com,REJECT
+DOMAIN-SUFFIX,sentry-cdn.com,REJECT
+URL-REGEX,(^https:\/\/.+)\/.*(ad|doubleclick).*\.(js|swf|jpg|jpeg|png|gif)$,REJECT

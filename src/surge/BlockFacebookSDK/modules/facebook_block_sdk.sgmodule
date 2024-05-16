@@ -1,0 +1,7 @@
+#!name=Block Facebook SDK
+#!desc=It does not affect the Facebook App itself, but it will prevent third-party apps from using Facebook to log in. Due to changes in system default behavior in iOS 15, it is currently not possible to whitelist Facebook's own apps. v20210927 v20210927
+#!system=ios
+#!author=Kien Tran
+
+[Rule]
+AND,((NOT,((USER-AGENT,*FBAN/FBIOS;*))), (NOT,((USER-AGENT,*FBAN/FBPageAdmin;*))), (NOT,((USER-AGENT,*FBAN/MessengerLiteForiOS;*))), (NOT,((USER-AGENT,Instagram*))), (NOT,((USER-AGENT,Messenger*))), (DOMAIN,graph.facebook.com)),REJECT

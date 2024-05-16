@@ -1,0 +1,14 @@
+#!name=TestFlight
+#!desc=TestFlight regional restrictions lifted
+#!system=ios
+#!category=Apple
+#!author=Kien Tran
+
+[General]
+skip-proxy = %APPEND% iosapps.itunes.apple.com
+
+[Script]
+TestFlight download correction = type=http-request,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Testflight/scripts/testflight.js,pattern="^https?:\/\/testflight \.apple\.com\/v\d\/accounts\/.+?\/install$",requires-body=1,argument="\d+-\d+,\d+->143441-19,29"
+
+[MITM]
+hostname = %APPEND% testflight.apple.com

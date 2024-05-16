@@ -1,0 +1,36 @@
+#!name=GroupAuto
+#!desc=Preferred node: (speed: persistent cache) (average delay: persistent cache) returned by httpApi
+#!system=ios
+#!category=Panels
+#!author=Kien Tran
+
+#Function:
+# If the policy group node changes, the result will be re-cached and re-valued.
+# If a node occasionally fails to ping, there is a high probability that it will not be selected.
+# If a node has low latency but poor speed, it will not be selected.
+# Strategy:
+# Optimize nodes based on the node speed and delay (persistent cache) returned by the api
+
+#Panel description:
+# Inherited: Tokyo: 40C 6.54M 61 [Tokyo] represents the preferred node, [40C] represents the number of times, [6.54M] represents the maximum speed, [61] represents the comprehensive score that changes non-linearly according to speed and delay
+# GroupAuto VPS'4 17:41 [VPS] represents the preferred policy group name ['4] represents 4 nodes in the policy group
+# ♳,♴,♵,♶,♷,♸,♹, means more than 30 caches have been cleaned
+
+#Required parameters:
+# group= Your policy group name (you need to fill in the manually selected policy group select)
+
+# Optional parameters:
+# avgnumber=30 The number of cache node tests. If it exceeds the number, it will be cleared.
+#Tolerance=10 The tolerance is 10ms. If the tolerance is less than 10ms, the node will not be switched.
+# timecache=18 Cache expiration time (hours) or more than 40 data will clear old data
+# push Add parameters to enable notification, add no parameters to not notify
+
+[Panel]
+GroupAuto = script-name=GroupAuto,update-interval=6
+
+[Script]
+# Panel operation (panel and scheduled tasks can exist at the same time)
+GroupAuto = type=generic,timeout=15,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Panels/scripts/pro-group.js, argument=tolerance=10&timecache=18&color=#6699FF&icon=speedometer&group=🎮 XGaming
+
+# Scheduled automatic operation (optional need to cancel # comment) once every 30 minutes, not running from 2 to 7 o'clock every day
+Cron_GroupAuto = type=cron, cronexp="*/30 0,1,7-23 * * *", timeout=15,wake-system=0,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Panels/scripts/pro-group.js, argument=tolerance=10&timecache=18&group=🎮 XGaming

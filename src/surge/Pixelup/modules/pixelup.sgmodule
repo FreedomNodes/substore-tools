@@ -1,0 +1,14 @@
+#!name=Pixelup
+#!desc=Active Pixelup Premium
+#!requirement=CORE_VERSION>=20 && (SYSTEM = 'iOS')
+#!category=App Premium
+#!author=Kien Tran
+
+[Script]
+Pixelup = type=http-request,pattern=^https:\/\/receipt-verifier\.cdwapi\.com\/receipt$,requires-body=0,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Pixelup/scripts/pixelup.js
+
+[URL Rewrite]
+^https:\/\/gateway\.cerebroapi\.com\/log\/ios$ - reject
+
+[MITM]
+hostname = %APPEND% *.cdwapi.com, *.cerebroapi.com

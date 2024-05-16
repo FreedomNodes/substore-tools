@@ -1,0 +1,11 @@
+#!name=NYMF Premium
+#!desc=Active NYMF Premium
+#!requirement=CORE_VERSION>=20 && (SYSTEM = 'iOS' || SYSTEM = 'macOS')
+#!category=App Premium
+#!author=Kien Tran
+
+[Script]
+NYMF=type=http-response,pattern=^https?:\/\/nymfapp\.com\/api\/subscription,requires-body=1,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/NYMF/scripts/nymf.js
+
+[MITM]
+hostname = %APPEND% nymfapp.com

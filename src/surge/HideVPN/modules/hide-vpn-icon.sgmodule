@@ -1,0 +1,9 @@
+#!name=Hide VPN Icon
+#!desc=Hide VPN Icon
+#!system=ios
+#!author=Kien Tran
+
+[General]
+hide-vpn-icon = true
+
+tun-excluded-routes = %APPEND% 0.0.0.1/31

@@ -1,0 +1,11 @@
+#!name = QuickSearch
+#!desc= Quick Google Search
+#!system=ios
+#!author=Kien Tran
+
+[URL Rewrite]
+# yt  xxx (YouTube)
+^https:\/\/www\.google\.com\/search\?q=yt\+([^&]+).+ https://www.youtube.com/results?search_query=$1 302
+
+[MITM]
+hostname = %APPEND% www.google.com

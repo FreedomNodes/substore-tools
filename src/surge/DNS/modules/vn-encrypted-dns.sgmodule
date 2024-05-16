@@ -1,0 +1,8 @@
+#!name = VN Encrypted DNS
+#!desc = Encrypted DNS-over-HTTPS (DoH)
+#!requirement=CORE_VERSION>=20 && (SYSTEM = 'iOS' || SYSTEM = 'macOS')
+#!category=DNS Server
+#!author=Kien Tran
+
+[General]
+encrypted-dns-server = %APPEND% https://dns.vietdns.vn, quic://vn.dns.abpvn.com

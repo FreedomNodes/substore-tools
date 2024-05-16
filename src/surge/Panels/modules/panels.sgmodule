@@ -1,0 +1,63 @@
+#!name=Panels
+#!desc=Information panel
+#!system=ios
+#!category=Panels
+#!author=Kien Tran
+
+[Panel]
+# Surge Pro, display the startup time, click to refresh to reload configuration
+SurgePro_ReloadProfile = script-name=SurgePro_ReloadProfile,update-interval=1
+
+# Subscription Infomation
+#SubscribeInfo = script-name=SubscribeInfo, update-interval=1
+
+# Traffic Statistics
+#TrafficStatistics = script-name=TrafficStatistics,update-interval=1
+
+# Network details
+#NET_info = script-name=NET_info,update-interval=1
+
+# Policy group panel can be configured repeatedly. Please modify the corresponding fields.
+#groupPanel= script-name=groupPanel,update-interval=5
+
+# A panel that displays information about your current node
+#IP-Check = script-name=IP-Check, title="Node details", content="Refresh", style=info, update-interval=1
+
+# A tool to display network information panel
+NetInfoPanel=title="",content="",style=info,script-name=NetInfoPanel,update-interval=1
+
+#Connectivity_Test = script-name=Connectivity_Test,update-interval=-1
+
+# A panel to quickly clear Surge DNS cache
+FlushDNS = script-name=FlushDNS,update-interval=600
+
+[Script]
+# Comes with reload configuration, Surge Pro title, can display startup time, click to refresh to reload configuration
+SurgePro_ReloadProfile = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Panels/scripts/surgepro_reload_profile.js,argument=icon=crown.fill&color=#f6c970
+
+# Subscription Infomation
+# Fields that must be modified: Your encoded subscription link
+#SubscribeInfo = type=generic,timeout=20,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Panels/scripts/sub_info.js,argument=urls=https%3A%2F%2Fvip.viefast.vn%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D7553d7f6913680798065e8ba26394380|https%3A%2F%2Fmy.viefast.vn%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D596619f54048885e5348e53ea8e1fa53|https%3A%2F%2F5gtocdocao.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D47f64a6f3af62a320083a3fda6ac985c|https%3A%2F%2Fcsadata4g.me%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D4d8e1ac41503588ed8d9f863d4c975f3|https%3A%2F%2Fsub.fuzzypn.me%2Fapi%2Fv1%2Fclient%2F18ed4eb2c024013abdc6bad288a2af8c|https%3A%2F%2F4gviet.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D7d5b3634cc5daeb0bf5cd99e47aaed7a|https%3A%2F%2Fvlvpn.net%2Fs%2FXW96oeuxRixyf8AT&reset_day=1&title=Subscription Infomation&icon=opticaldisc&color=#5AC8FA
+
+# Traffic Statistics
+#TrafficStatistics = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Panels/scripts/traffic_statistics.js ,argument=icon=arrow.up.arrow.down.circle&color=#5d84f8
+
+# Network details The title is displayed as the root node name
+# Fields that should be modified group proxy policy group name
+#NET_info = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Panels/scripts/net_info.js,argument=icon=externaldrive.connected.to.line.below&color=#9a7ff7&group=🎮 XGaming
+
+# Policy group panel can be configured repeatedly. Please modify the corresponding fields.
+# Fields that must be changed: group fill in the name of the policy group that needs to be displayed
+#groupPanel = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Panels/scripts/group_panel.js,argument=icon=network&color=#86abee&group=🚀 VIEFAST VPN
+
+# A panel that displays information about your current node
+#IP-Check = type=generic,timeout=3,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Panels/scripts/ip_check.js
+
+# A tool to display network information panel
+NetInfoPanel=script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Panels/scripts/network_info.js,type=generic,timeout=30
+
+#Connectivity_Test = type=generic,timeout=3,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Panels/scripts/connectivity-test.js,argument=title=Connectivity test&server=false
+
+# A panel to quickly clear Surge DNS cache
+FlushDNS = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/Panels/scripts/flush_dns.js,argument=title=DNS FLush&icon=cube&color=#afe59a&server=false
+

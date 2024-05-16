@@ -1,0 +1,9 @@
+#!name = DNSPod-DoH
+#!desc = Encrypted DNS-over-HTTPS (DoH)
+#!requirement=CORE_VERSION>=20 && (SYSTEM = 'iOS' || SYSTEM = 'macOS')
+#!category=DNS Server
+#!author=Kien Tran
+
+[General]
+dns-server = 119.29.29.29, 223.5.5.5
+encrypted-dns-server = https://doh.pub/dns-query

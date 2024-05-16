@@ -1,0 +1,9 @@
+#!name=Sub-Store Sync (24hr)
+#!desc=Synchronizes every 24 hours starting at 1 am
+#!category= Sub-Store
+#!system=ios
+#!author=Kien Tran
+
+[Script]
+Sub-Store Sync = type=cron,cronexp=0 01 * * *,wake-system=1,timeout=120,script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/cron-sync-artifacts.min.js
+Sub-Store Backup = type=cron,cronexp=0 01 * * *,wake-system=1,timeout=120,script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/SubStore/scripts/substore-backup.js

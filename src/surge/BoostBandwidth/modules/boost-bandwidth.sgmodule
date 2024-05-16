@@ -1,0 +1,8 @@
+#!name=Boost Bandwidth
+#!desc=Execute in the background every two minutes
+#!system=ios
+#!category=Boost Bandwidth
+#!author=Kien Tran
+
+[Script]
+cron "*/2 * * * *" script-path=https://raw.githubusercontent.com/FreedomNodes/vpn-script/main/src/surge/BoostBandwidth/scripts/get-speed-test-config.js

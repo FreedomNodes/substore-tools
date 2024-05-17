@@ -4,7 +4,7 @@
     <img src="assets/images/logo.png" alt="Logo" width="120" height="100">
   </a>
 
-  <h3 align="center">Sub-Store tools</h3>
+  <h3 align="center">Sub-Store ToolKit</h3>
 
   <p align="center">
     An awesome sub-store tool for proxy management

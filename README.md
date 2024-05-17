@@ -1,4 +1,24 @@
-# substore-tools
+<br />
+<div align="center">
+  <a href="https://github.com/FreedomNodes/substore-tools">
+    <img src="assets/images/logo.png" alt="Logo" width="120" height="100">
+  </a>
+
+  <h3 align="center">Sub-Store tools</h3>
+
+  <p align="center">
+    An awesome sub-store tool for proxy management
+    <br />
+    <a href="https://github.com/FreedomNodes/substore-tools/wiki"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/FreedomNodes/substore-tools/wiki/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-c%C3%A0i-%C4%91%E1%BA%B7t">View Demo</a>
+    ·
+    <a href="https://github.com/FreedomNodes/substore-tools/issues/new?labels=bug">Report Bug</a>
+    ·
+    <a href="https://github.com/FreedomNodes/substore-tools/issues/new?labels=enhancement,feature-request">Request Feature</a>
+  </p>
+</div>
 
 ## Tham số của bộ lọc trong file config:
 

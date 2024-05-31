@@ -20,7 +20,9 @@
   </p>
 </div>
 
-## Tham số của bộ lọc:
+## 📚 Proxy Management
+
+### ⚙️ Tham số của bộ lọc
 
 | Tham số     | Ví dụ                   | Mô tả                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ----------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -39,3 +41,146 @@
 | `types`     | `- vmess`               | Mảng giá trị lọc proxy theo loại (`vmess`, `trojan`,...)                                                                                                                                                                                                                                                                                                                                                                                      |
 | `transports`     | `- ws`               | Mảng giá trị lọc proxy theo transfer protocol (`ws`, `wss`, `grpc`,`tls`)                                                                                                                                                                                                                                                                                                                                                                                      |
 | `font`      | `type: circle-regular`  | Thay đổi font của proxy <br> `type: circle-regular`: đổi font cả tên và số <br> `num: circle-regular`: chỉ đổi font số <br><br> Các font hỗ trợ: `serif-bold`, `serif-italic`, `serif-bold-italic`, `sans-serif-regular`, `sans-serif-bold`, `sans-serif-italic`, `sans-serif-bold-italic`, `script-regular`, `script-bold`, `fraktur-regular`, `fraktur-bold`, `monospace-regular`, `double-struck-bold`, `circle-regular`, `square-regular` |
+
+### 🛠️ Cấu hình bộ lọc
+Tạo file config như trong phần hướng dẫn [link](https://github.com/FreedomNodes/substore-tools/wiki/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-c%C3%A0i-%C4%91%E1%BA%B7t)
+
+```yml
+default:
+  sni: abc.com
+```
+
+#### Cài đặt SNI cho bộ lọc
+```yml
+default:
+  sni: abc.com
+groupA:
+  sni: xyz.com
+```
+Nếu bộ lọc không cài đặt SNI thì sẽ lấy SNI ở `default`
+
+#### Thay đổi tên cho proxy
+```yml
+default:
+  sni: abc.com
+groupA:
+  name: "{F} {F:name} ({0#})"
+```
+
+#### Sắp xếp proxy
+Ví dụ muốn sắp xếp proxy theo cờ với thứ tự tăng dần
+```yml
+default:
+  sni: abc.com
+groupA:
+  sorts: "flag:asc"
+```
+
+#### Nhóm proxy theo cờ
+Ví dụ muốn đánh số thứ tự theo từng nhóm nước khác nhau
+```yml
+default:
+  sni: abc.com
+groupA:
+  name: "{F} {F:name} ({0#})"
+  groupBy: flag
+```
+
+#### Lọc proxy theo tên bằng regex
+Ví dụ muốn lọc các proxy có số từ 01 đến 09
+```yml
+default:
+  sni: abc.com
+groupA:
+  regex: /0[1-9]/i
+```
+
+#### Lọc proxy theo ISP
+Ví dụ muốn lọc các proxy được cung cấp bởi Google
+```yml
+default:
+  sni: abc.com
+groupA:
+  isps: [google]
+```
+
+#### Lọc proxy theo port
+Ví dụ muốn lọc proxy theo port 80 và port 443
+```yml
+default:
+  sni: abc.com
+groupA:
+  ports: [80, 443]
+```
+hoặc lọc proxy theo port từ 30000 đến 50000
+```yml
+default:
+  sni: abc.com
+groupA:
+  ports: [30000..50000]
+```
+
+#### Lọc proxy theo IP
+```yml
+default:
+  sni: abc.com
+groupA:
+  ips: [192.168.1.0/24]
+```
+
+#### Lọc proxy theo khu vực
+Ví dụ muốn lọc proxy theo khu vực Hà Nội
+```yml
+default:
+  sni: abc.com
+groupA:
+  regions: [HN]
+```
+
+#### Lọc proxy theo quốc gia
+Ví dụ muốn lọc proxy theo quốc gia Việt Nam và Singapore
+```yml
+default:
+  sni: abc.com
+groupA:
+  countries: [🇻🇳, SG]
+```
+
+#### Lọc proxy theo tên sub
+Ví dụ muốn lọc proxy theo sub có tên là `subNameA`
+```yml
+default:
+  sni: abc.com
+groupA:
+  subs: [subNameA]
+```
+
+#### Lọc proxy theo tag
+Ví dụ muốn lọc proxy theo tag có tên là `master`
+```yml
+default:
+  sni: abc.com
+groupA:
+  tags: [master]
+```
+
+#### Lọc proxy theo loại
+Ví dụ muốn lọc proxy `vmess`
+```yml
+default:
+  sni: abc.com
+groupA:
+  types: [vmess]
+```
+
+#### Lọc proxy theo protocol
+Ví dụ muốn lọc proxy `grpc`
+```yml
+default:
+  sni: abc.com
+groupA:
+  transports: [grpc]
+```
+
+## 📚 Subscription Converter (updating)
+Hiện đã hỗ trợ các app: Surge, Loon, Stash, Egern, Shadowrocket, Sing-Box, Clash, Surfboard, V2Ray/V2Box

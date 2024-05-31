@@ -182,5 +182,21 @@ groupA:
   transports: [grpc]
 ```
 
+#### Bật chế độ DNS Lookup
+Mặc định sẽ không phân giải tên miền, nếu muốn phân giải tên miền ra IP thì sẽ config ở `default` như sau:
+```yml
+default:
+  sni: abc.com
+  dnsLookup: true
+```
+hoặc muốn chỉ phân giải tên miền với kiểu proxy vmess thì sẽ config như sau:
+```yml
+default:
+  sni: abc.com
+  dnsLookup:
+    types: [vmess]
+```
+Các điều kiện khác làm tương tự.
+
 ## 📚 Subscription Converter (updating)
 Module Subscription Converter hiện đã hỗ trợ các app: Surge, Loon, Stash, Egern, Shadowrocket, Sing-Box, Clash, Surfboard, V2Ray/V2Box

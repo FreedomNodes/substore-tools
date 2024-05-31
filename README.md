@@ -183,4 +183,4 @@ groupA:
 ```
 
 ## 📚 Subscription Converter (updating)
-Hiện đã hỗ trợ các app: Surge, Loon, Stash, Egern, Shadowrocket, Sing-Box, Clash, Surfboard, V2Ray/V2Box
+Module Subscription Converter hiện đã hỗ trợ các app: Surge, Loon, Stash, Egern, Shadowrocket, Sing-Box, Clash, Surfboard, V2Ray/V2Box
